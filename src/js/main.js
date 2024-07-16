@@ -11,8 +11,8 @@
 
 // Segunda parte (Favoritos)
 
-// - La persona podrá elegir como favoritas cualquiera de las opciones de series.
-// - Se cambiaran el color de fondo  y de fuente de la serie seleccionada.
+// - La persona podrá elegir como favoritas cualquiera de las opciones de series.(tengo que escuchar el click y buscar la propiedad de la tarjeta)
+// - Se cambiaran el color de fondo  y de fuente de la serie seleccionada. se añadirá a favoritos
 // - Mostrar la elección favorita de la usuaria en la parte izquierda de la pantalla debajo del formulario de búsqueda.
 // - La serie favorita seguirá mostrándose en el DOM aunque la usuaria realice otra búsqueda.
 
@@ -25,25 +25,39 @@
 const input = document.querySelector('.js-input');
 const button = document.querySelector('.js-button');
 const container = document.querySelector('.js-container');
+const favorite = document.querySelector('.js-container-favorites');
+
 
 //Creo una variable global para el arry de las series
 let seriesList = [];
+//variable fuera para favoritos
+let favoriteSeries = [];
+
 //defino la funsion para renderizar las series
 function renderSeries(series, container) {
 
     //Pintar la tarjeta en la pagina con DOM //serie contine los datos del arry.
     for (const serie of series) {
         const cardSeries = document.createElement('div');
+        cardSeries.dataset.id = serie.mal_id; //con los id identifico el click
+        cardSeries.className = 'js-style'; //me sirve para escuchar el evento
+
         const cardTitle = document.createElement('h2');
-        const textitle =document.createTextNode(serie.title);
+        const textitle = document.createTextNode(serie.title);
         cardTitle.appendChild(textitle);
         const cardImg = document.createElement('img');
         cardImg.setAttribute('src', serie.images.jpg.image_url);
-        container.appendChild(cardSeries);
+
         cardSeries.appendChild(cardTitle);
         cardSeries.appendChild(cardImg);
+        container.appendChild(cardSeries);
+
+        cardSeries.addEventListener('click', handleFavorites);
         console.log(serie);
     }
+}
+function handleFavorites(){
+    console.log('haz hecho click');
 }
 
 //Creo una funsion para el fetch
