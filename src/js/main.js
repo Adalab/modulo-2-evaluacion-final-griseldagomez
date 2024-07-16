@@ -23,7 +23,7 @@
 
 
 const input = document.querySelector('.js-input');
-const button1 = document.querySelector('.js-button');
+const button = document.querySelector('.js-button');
 const container = document.querySelector('.js-series');
 
 //Creo una variable global para el arry de las series
@@ -50,6 +50,15 @@ const getDataApiAndRenderSeries = (value) => {
         });
 }
 
-getDataApiAndRenderSeries('naruto');
-
 // cuando la usuaria hace click en botton buscar hay que llmar a getDataApiAndRenderSeries.
+
+//funcion manejadora
+
+function handleClick(event) {
+    event.preventDefault();
+//si la usuaria hace click ....
+    if (input.value) {
+        getDataApiAndRenderSeries(input.value);
+    }
+}
+button.addEventListener('click', handleClick);
