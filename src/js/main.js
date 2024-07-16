@@ -16,7 +16,7 @@
 // - Mostrar la elección favorita de la usuaria en la parte izquierda de la pantalla debajo del formulario de búsqueda.
 // - La serie favorita seguirá mostrándose en el DOM aunque la usuaria realice otra búsqueda.
 
-// Tercera parte (Almacenamiento local)+
+// Tercera parte (Almacenamiento local)
 
 // -Guardar las selecciones favoritas de la usuaria en el navegador local.
 // -Al recargar la pagina se mostrará el listado de favoritos.
@@ -28,20 +28,20 @@ const container = document.querySelector('.js-container');
 
 //Creo una variable global para el arry de las series
 let seriesList = [];
-
 //defino la funsion para renderizar las series
 function renderSeries(series, container) {
 
-    //Pintar la tarjeta en la pagina con DOM 
+    //Pintar la tarjeta en la pagina con DOM //serie contine los datos del arry.
     for (const serie of series) {
         const cardSeries = document.createElement('div');
         const cardTitle = document.createElement('h2');
+        const textitle =document.createTextNode(serie.title);
+        cardTitle.appendChild(textitle);
         const cardImg = document.createElement('img');
-        cardImg.getAttribute('src,');
+        cardImg.setAttribute('src', serie.images.jpg.image_url);
         container.appendChild(cardSeries);
         cardSeries.appendChild(cardTitle);
         cardSeries.appendChild(cardImg);
-
         console.log(serie);
     }
 }
@@ -61,7 +61,7 @@ const getDataApiAndRenderSeries = (value) => {
 
 // cuando la usuaria hace click en botton buscar hay que llmar a getDataApiAndRenderSeries.
 
-//funcion manejadora
+//funcion manejadora// se recogen los datos
 
 function handleClick(event) {
     event.preventDefault();
