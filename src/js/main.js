@@ -56,8 +56,16 @@ function renderSeries(series, container) {
         console.log(serie);
     }
 }
-function handleFavorites(){
-    console.log('haz hecho click');
+//Escucho el click de la usuario en la serie con id.
+function handleFavorites(event){
+   const idClickSerie = (event.currentTarget.dataset.id);
+   const serieSelected =seriesList.find((serie) => {
+     return idClickSerie == serie.mal_id;
+   }
+)
+favoriteSeries.push()
+
+    console.log(serieSelected);
 }
 
 //Creo una funsion para el fetch
@@ -73,9 +81,7 @@ const getDataApiAndRenderSeries = (value) => {
         });
 }
 
-
-
-//funcion manejadora// se recogen los datos
+//funcion manejadora// se recogen los datos del input
 
 function handleClick(event) {
     event.preventDefault();
