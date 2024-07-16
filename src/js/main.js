@@ -5,7 +5,7 @@
 // Primera parte (Buscar)
 
 // - Crear la estructura donde la usuaria buscara la serie.
-// - Saber la cantidad de series que tendrá la persona para elegir.
+// - Saber cuales y cuantas seran las series que la usuaria podra elegir.
 // - Saber cuando la usuaria hace click en Buscar la Serie.
 // - Recoger los datos de la elección de la usuaria.
 // - Mostrar en el DOM la elección de la usuaria.
@@ -24,6 +24,20 @@
 
 
 const input = document.querySelector('.js-input');
-const button = document.querySelector('js.button');
+const button1 = document.querySelector('.js-button');
 
 
+fetch
+
+
+
+
+
+
+
+//Escuchando el evento(probando que funcione)
+const handlebutton1 = function() {
+event.preventDefault()
+    console.log('click');
+}
+button1.addEventListener('click',handlebutton1);
