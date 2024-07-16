@@ -24,15 +24,24 @@
 
 const input = document.querySelector('.js-input');
 const button = document.querySelector('.js-button');
-const container = document.querySelector('.js-series');
+const container = document.querySelector('.js-container');
 
 //Creo una variable global para el arry de las series
 let seriesList = [];
 
 //defino la funsion para renderizar las series
 function renderSeries(series, container) {
-    let html = "";
+
+    //Pintar la tarjeta en la pagina con DOM 
     for (const serie of series) {
+        const cardSeries = document.createElement('div');
+        const cardTitle = document.createElement('h2');
+        const cardImg = document.createElement('img');
+        cardImg.getAttribute('src,');
+        container.appendChild(cardSeries);
+        cardSeries.appendChild(cardTitle);
+        cardSeries.appendChild(cardImg);
+
         console.log(serie);
     }
 }
@@ -46,7 +55,7 @@ const getDataApiAndRenderSeries = (value) => {
         .then(function (data) {
             console.log(data);
             seriesList = data.data;
-            renderSeries(seriesList,container);
+            renderSeries(seriesList, container);
         });
 }
 
@@ -56,7 +65,7 @@ const getDataApiAndRenderSeries = (value) => {
 
 function handleClick(event) {
     event.preventDefault();
-//si la usuaria hace click ....
+    //si la usuaria hace click ....
     if (input.value) {
         getDataApiAndRenderSeries(input.value);
     }
