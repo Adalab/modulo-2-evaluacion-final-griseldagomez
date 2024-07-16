@@ -73,7 +73,7 @@ const getDataApiAndRenderSeries = (value) => {
         });
 }
 
-// cuando la usuaria hace click en botton buscar hay que llmar a getDataApiAndRenderSeries.
+
 
 //funcion manejadora// se recogen los datos
 
