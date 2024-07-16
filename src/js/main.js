@@ -35,6 +35,7 @@ let favoriteSeries = [];
 
 //defino la funsion para renderizar las series
 function renderSeries(series, container) {
+    container.innerHTML = "";//se lo agrego para que vacie el container
 
     //Pintar la tarjeta en la pagina con DOM //serie contine los datos del arry.
     for (const serie of series) {
@@ -56,17 +57,24 @@ function renderSeries(series, container) {
         console.log(serie);
     }
 }
-//Escucho el click de la usuario en la serie con id.
-function handleFavorites(event){
-   const idClickSerie = (event.currentTarget.dataset.id);
-   const serieSelected =seriesList.find((serie) => {
-     return idClickSerie == serie.mal_id;
-   }
-)
-favoriteSeries.push()
 
-    console.log(serieSelected);
-}
+
+//Escucho el click de la usuario en la serie con id.
+function handleFavorites(event) {
+    const idClickSerie = (event.currentTarget.dataset.id);
+    const serieSelected = seriesList.find((serie) => {
+        return idClickSerie == serie.mal_id;
+    });
+
+    const indexSeriefavorite = favoriteSeries.findIndex((favoriteSerie) => {
+        return idClickSerie == favoriteSerie.mal_id;
+        console.log(indexSeriefavorite);
+    });
+    if (indexSeriefavorite === -1) {
+        favoriteSeries.push(serieSelected);//añado la serie
+        renderSeries(favoriteSeries, favorite);
+    }
+};
 
 //Creo una funsion para el fetch
 const getDataApiAndRenderSeries = (value) => {
