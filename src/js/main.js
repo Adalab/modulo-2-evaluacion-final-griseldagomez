@@ -85,7 +85,9 @@ const getDataApiAndRenderSeries = (value) => {
         .then(function (data) {
             console.log(data);
             seriesList = data.data;
-            renderSeries(seriesList, container);
+            
+            localStorage.setItem("data", JSON.stringify (seriesList) );
+            renderSeries(seriesList, container); 
         });
 }
 
