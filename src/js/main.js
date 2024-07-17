@@ -33,6 +33,13 @@ let seriesList = [];
 //variable fuera para favoritos
 let favoriteSeries = [];
 
+const getfavorite = localStorage.getItem("favoritos");
+
+if (getfavorite !== null) {
+    favoriteSeries = JSON.parse(getfavorite);
+    renderSeries(favoriteSeries, favorite);
+}
+
 //defino la funsion para renderizar las series
 function renderSeries(series, container) {
     container.innerHTML = "";//se lo agrego para que vacie el container
@@ -72,6 +79,7 @@ function handleFavorites(event) {
     });
     if (indexSeriefavorite === -1) {
         favoriteSeries.push(serieSelected);//añado la serie
+        localStorage.setItem("favoritos", JSON.stringify(favoriteSeries));
         renderSeries(favoriteSeries, favorite);
     }
 };
@@ -85,9 +93,7 @@ const getDataApiAndRenderSeries = (value) => {
         .then(function (data) {
             console.log(data);
             seriesList = data.data;
-            
-            localStorage.setItem("data", JSON.stringify (seriesList) );
-            renderSeries(seriesList, container); 
+            renderSeries(seriesList, container);
         });
 }
 
