@@ -47,7 +47,7 @@ function renderSeries(series, container) {
     for (const serie of series) {
         const cardSeries = document.createElement('div');
         cardSeries.dataset.id = serie.mal_id; //con los id identifico el click
-        cardSeries.className = 'js-style'; //me sirve para escuchar el evento
+        
 
         const cardTitle = document.createElement('h2');
         const textitle = document.createTextNode(serie.title);
@@ -70,6 +70,7 @@ function handleFavorites(event) {
     const serieSelected = seriesList.find((serie) => {
         return idClickSerie == serie.mal_id;
     });
+    
 
     const indexSeriefavorite = favoriteSeries.findIndex((favoriteSerie) => {
         return idClickSerie == favoriteSerie.mal_id;
