@@ -10,22 +10,27 @@
 
 <body>
   <header>
-    <h2>Buscador de Series de Anime</h2>
+    <h2 class="title">Buscador de Series de Anime</h2>
   </header>
-  <br><br>
+
   <form action="">
-    <div>
-      <input class="js-input" type="text" id="name" name="name" />
-      <input class="js-button" value="Buscar" type="submit"></input>
-    </div>
+    <input class="js-input input1" type="text" id="name" name="name" />
+    <input class="js-button button1" value="Buscar" type="submit"></input>
   </form>
-  <br><br>
-  <section>
-    <h2>Series Favoritas</h2>
-    <div class="js-container-favorites"></div>
-    <h2>Resultados</h2>
-    <div class="js-container container"></div>
-  </section>
+
+  <main>
+    <aside class="containerfavoritos">
+      <h2 class="favoritas">Series Favoritas</h2>
+      <div class="js-container-favorites"></div>
+    </aside>
+    <section class="resultados">
+      <h2>Resultados</h2>
+      <div class="js-container container"></div>
+    </section>
+
+    
+  </main>
+
   <script src="./js/main.js"></script>
 </body>
 

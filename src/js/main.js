@@ -30,7 +30,6 @@ const favorite = document.querySelector('.js-container-favorites');
 
 //Creo una variable global para el arry de las series
 let seriesList = [];
-//variable fuera para favoritos
 let favoriteSeries = [];
 
 const getfavorite = localStorage.getItem("favoritos");
@@ -44,7 +43,7 @@ if (getfavorite !== null) {
 function renderSeries(series, container) {
     container.innerHTML = "";//se lo agrego para que vacie el container
 
-    //Pintar la tarjeta en la pagina con DOM //serie contine los datos del arry.
+    //Pintar la tarjeta en la pagina con DOM //serie contiene los datos del arry.
     for (const serie of series) {
         const cardSeries = document.createElement('div');
         cardSeries.dataset.id = serie.mal_id; //con los id identifico el click
@@ -64,7 +63,6 @@ function renderSeries(series, container) {
         console.log(serie);
     }
 }
-
 
 //Escucho el click de la usuario en la serie con id.
 function handleFavorites(event) {
