@@ -23,8 +23,10 @@ header {
 
 .button1 {
     height: 25px;
+    padding: 5px;
+    border: 1px solid pink;
     border-radius: 5px;
-    background-color: rgb(163, 255, 127);
+    background-color: rgb(255, 178, 220);
 }
 
 
@@ -51,7 +53,7 @@ main {
 .containerfavoritos {
     margin: 40px;
     width: 300px;
-    background-color: rgb(197, 255, 127);
+    background-color: pink;
     padding: 40px;
     font-family: Arial, Helvetica, sans-serif;
     color: $color-bg;
